@@ -1,0 +1,3 @@
+husky true
+corgies true
+elephant false
