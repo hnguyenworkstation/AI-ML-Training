@@ -1,5 +1,5 @@
 import java.io.*;
-import java.util.Arrays.*;
+import java.util.Arrays;
 
 /********************************************
 Template:
@@ -31,11 +31,21 @@ class Main {
 				String[] splittedStr = currentline.split("\\s+");
 
 				if (isUnique(splittedStr[0])) {
-					System.out.println(splittedStr[0] + ": " + splittedStr[1]
-						+ " -- Correct!");
+					if (splittedStr[1].toLowerCase().equals("true")) {
+						System.out.println(splittedStr[0] + ": " + splittedStr[1]
+							+ " -- Correct!");
+					} else {
+						System.out.println(splittedStr[0] + ": " + splittedStr[1]
+							+ " -- Wrong!!");
+					}
 				} else {
-					System.out.println(splittedStr[0] + ": " + splittedStr[1]
-						+ " -- Wrong!!");
+					if (splittedStr[1].toLowerCase().equals("false")) {
+						System.out.println(splittedStr[0] + ": " + splittedStr[1]
+							+ " -- Correct!");
+					} else {
+						System.out.println(splittedStr[0] + ": " + splittedStr[1]
+							+ " -- Wrong!!");
+					}
 					break;
 				}
 			}
@@ -49,10 +59,10 @@ class Main {
 		Arrays.fill(ascii, 0);
 
 		for (int i = 0; i < line.length(); i++) {
-			ascii[i]++;
+			ascii[line.charAt(i)]++;
 		}
 
-		for (int i = 0; i < line.length(); i++) {
+		for (int i = 0; i < 128; i++) {
 			if (ascii[i] > 1)
 				return false;
 		}

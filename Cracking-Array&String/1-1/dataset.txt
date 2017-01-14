@@ -1,3 +1,6 @@
 husky true
 corgies true
 elephant false
+tomatoes false
+chemistry true
+
